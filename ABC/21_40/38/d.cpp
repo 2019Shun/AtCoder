@@ -27,19 +27,11 @@ template<class A,class B,class C,class D>void pr(A a,B b,C c,D d){cout << a << "
 typedef long long ll;
 typedef pair<int, int> pii;
 
-int lis(vector<int> &p){
-    vector<int> dp(p.size());
-    int ret = 0;
-    // DEBUG_VEC(p);
-    REP(i, p.size()){
-        dp[i] = 1;
-        REP(j, i){
-            if(p[i] > p[j]) dp[i] = max(dp[i], dp[j]+1);
-        }
-        ret = max(ret, dp[i]);
-        // DEBUG(ret);
-    }
-    return ret;
+int lis(vector<int> &v){
+    int n = v.size();
+    vector<int> ans(n, INF);
+    REP(i, n) *lower_bound(ALL(ans), v[i]) = v[i];
+    return lower_bound(ALL(ans), INF) - ans.begin();
 }
 
 int main(void)
@@ -50,14 +42,17 @@ int main(void)
     REP(i, n){
         int a,b;
         cin >> a >> b;
-        ab[i].fi = ba[i].se = a;
-        ab[i].se = ba[i].fi = b;
+        ab[i].fi = a;
+        ab[i].se = -b;
+        ba[i].fi = b;
+        ba[i].se = -a;
     }
-    SORT(ab);SORT(ba);
+    SORT(ab);
+    SORT(ba);
     vector<int> a(n), b(n);
     REP(i, n){
-        a[i] = ab[i].se;
-        b[i] = ba[i].se;
+        a[i] = -ab[i].se;
+        b[i] = -ba[i].se;
     }
 
     pr(min(lis(a), lis(b)));

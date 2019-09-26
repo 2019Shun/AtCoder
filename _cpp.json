@@ -1,0 +1,421 @@
+{
+    "main":{
+        "prefix": "include",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "#include <vector>",
+            "#include <numeric>",
+            "#define PI 3.14159265358979323846",
+            "#define MAXINF (1e18L)",
+            "#define INF (1e9L)",
+            "#define EPS (1e-9)",
+            "#define MOD ((ll)(1e9+7))",
+            "#define REP(i, n) for(int i=0;i<int(n);++i)",
+            "#define Rep(i,sta,n) for(int i=sta;i<n;i++)",
+            "#define RREP(i, n) for(int i=int(n)-1;i>=0;--i)",
+            "#define ALL(v) v.begin(),v.end()",
+            "#define FIND(v,x) (binary_search(ALL(v),(x)))",
+            "#define SORT(v) sort(ALL(v))",
+            "#define RSORT(v) sort(ALL(v));reverse(ALL(v))",
+            "#define DEBUG(x) cerr<<#x<<\": \"<<x<<endl;",
+            "#define DEBUG_VEC(v) cerr<<#v<<\":\";for(int i=0;i<v.size();i++) cerr<<\" \"<<v[i]; cerr<<endl",
+            "#define Yes(n) cout<<((n)?\"Yes\":\"No\")<<endl",
+            "#define YES(n) cout<<((n)?\"YES\":\"NO\")<<endl",
+            "#define pb push_back",
+            "#define fi first",
+            "#define se second",
+            "using namespace std;",
+            "template<class A>void pr(A a){cout << (a) << endl;}",
+            "template<class A,class B>void pr(A a,B b){cout << a << \" \"  ;pr(b);}",
+            "template<class A,class B,class C>void pr(A a,B b,C c){cout << a << \" \" ;pr(b,c);}",
+            "template<class A,class B,class C,class D>void pr(A a,B b,C c,D d){cout << a << \" \" ;pr(b,c,d);}",
+            "template<class T> inline bool chmin(T& a, T b){return a>b ? a=b, true : false;}",
+            "template<class T> inline bool chmax(T& a, T b){return a<b ? a=b, true : false;}",
+            "typedef long long ll;",
+            "typedef pair<int, int> pii;",
+            "typedef pair<ll,ll> pll;",
+            "",
+            "int main(void)",
+            "{",
+            "\t$0",
+            "}"
+            ]
+    },
+    "main2":{
+        "prefix": "include2",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "#define REP(i, n) for(int i=0;i<int(n);++i)",
+            "#define Yes(n) cout<<((n)?\"Yes\":\"No\")<<endl",
+            "using namespace std;",
+            "template<class A>void pr(A a){cout << (a) << endl;}",
+            "int main(void)",
+            "{",
+            "\t$0",
+            "}"
+            ]
+    },
+    "for": {
+        "prefix": "for",
+        "body": [
+            "for (${1:int} ${2:i} = ${3:0}; ${2:i} < ${4:n}; ${2:i}++) {",
+            "\t${0:}",
+            "}"
+            ],
+        "description": "for ループに対するコード スニペット"
+    },
+    "vecfor": {
+        "prefix": "vecfor",
+        "body": [
+            "for (${1:auto&} ${2:variable} : ${3:range}) {",
+            "\t${0:}",
+            "}"
+            ],
+        "description": "'コンテナ型の for' ループに対するコード スニペット"
+    },
+    "cinvector": {
+        "prefix": "cinvector",
+        "body": [
+            "vector<${1:int}> ${2:a}(${3:n});",
+            "for (int ${4:i} = 0; ${4:i} < ${3:n}; ${4:i}++) {",
+            "\tcin >> ${2:a}[${4:index}];",
+            "}"
+            ],
+        "description": "vector と for ループに対するコード スニペット"
+    },
+    "cin1": {
+        "prefix": "cin1",
+        "body": ["${1:int} ${2:a};","cin >> ${2:a};","${0:}"]
+    },
+    "cin2": {
+        "prefix": "cin2",
+        "body": ["${1:int} ${2:a},${3:b};","cin >> ${2:a} >> ${3:b};","${0:}"]
+    },
+    "cin3": {
+        "prefix": "cin3",
+        "body": ["${1:int} ${2:a},${3:b},${4:c};","cin >> ${2:a} >> ${3:b} >> ${4:c};","${0:}"]
+    },
+    "rep": {
+        "prefix": "rep",
+        "body": ["REP(${1:i}, ${2:n}){", "\t${0:}", "}"]
+    },
+    "rrep": {
+        "prefix": "rrep",
+        "body": ["RREP(${1:i}, ${2:n}){", "\t${0:}", "}"]
+    },    
+    "gcd": {
+        "prefix": "gcd",
+        "body": [
+            "ll gcd(ll a, ll b) {", 
+            "\tif (b == 0) return a;",
+            "\treturn gcd(b, a % b);",
+            "}"
+            ]
+    },
+    "lcm": {
+        "prefix": "lcm",
+        "body": [
+            "ll lcm(ll a, ll b) {", 
+            "\treturn a * (b / gcd(a, b));",
+            "}"
+            ]
+    },
+    "matrix": {
+        "prefix": "matrix",
+        "body": ["${1:v}[${2:x}][${3:y}]${0:}"]
+    },
+    "vec2": {
+        "prefix": "vec2",
+        "body": [
+            "class Vec2{",
+            "public:",
+            "\tint x;int y;",
+            "\tVec2(int x=0, int y=0) : x(x), y(y){};",
+            "\tVec2 operator+(Vec2 v){",
+            "\t\treturn Vec2(x+v.x, y+v.y);",
+            "\t}",
+            "\tVec2 operator-(Vec2 v){",
+            "\t\treturn Vec2(x-v.x, y-v.y);",
+            "\t}",
+            "};"
+            ]
+    },
+    "diff4": {
+        "prefix": "diff4",
+        "body": ["int dx[4]={-1,1,0,0}, dy[4]={0,0,-1,1};"]
+    },
+    "diff4_vec2": {
+        "prefix": "diff4_vec2",
+        "body": ["Vec2 diff[4] = {Vec2(-1,0),Vec2(1,0),Vec2(0,-1),Vec2(0,1)};"]
+    },
+    "dijkstra": {
+        "prefix": "dijkstra",
+        "body": [
+            "//cost_map[vertex] pll -> <to, cost>",
+            "vector<ll> dijkstra(ll s, vector<vector<pll>>& cost_map){",
+            "\tvector<ll> d(cost_map.size(), MAXINF);",
+            "\tpriority_queue<pll, vector<pll>, greater<pll>> q;",
+            "\tq.push(pll(0, s));",
+            "\td[s] = 0;",
+            "\twhile(!q.empty()){",
+            "\t\tpll f = q.top();q.pop();",
+            "\t\tif(d[f.se] < f.fi) continue;",
+            "\t\tfor(auto&& v : cost_map[f.se]){",
+            "\t\t\tll value = f.fi + v.se;",
+            "\t\t\tif(value < d[v.fi]) q.push(pll(d[v.fi] = f.fi + v.se, v.fi));",
+            "\t\t}",
+            "\t}",
+            "\treturn d;",
+            "}"
+        ],
+        "description": "ダイクストラ法による最短経路探索"
+    },
+    "bellman_ford": {
+        "prefix": "bellman_ford",
+        "body": [
+            "//cost_map[vertex] pll -> <to, cost>",
+            "bool bellman_ford(ll s, vector<vector<pll>>& cost_map, vector<ll>& result){",
+                "\tll N = cost_map.size();",
+                "\tvector<ll> d(N, MAXINF);",
+                "\td[s] = 0;",
+                "\tREP(k, N){",
+                "\t\tREP(i, N){",
+                "\t\t\tif(d[i]==MAXINF)continue;",
+                "\t\t\tfor(auto&& v : cost_map[i]){",
+                "\t\t\t\tif(d[v.fi] > d[i] + v.se){",
+                "\t\t\t\t\td[v.fi] = d[i] + v.se;",
+                "\t\t\t\t\tif(k==N-1) return false;",
+                "\t\t\t\t}",
+                "\t\t\t}",
+                "\t\t}",
+                "\t}",
+                "\tresult = d;",
+                "\treturn true;",
+            "}"
+        ],
+        "description": "ベルマン・フォード法による重み付き有向グラフにおける最短経路探索\n負の辺が存在する場合に使用"
+    },
+    "kruskal": {
+        "prefix": "kruskal",
+        "body": [
+            "//v -> number of vertex,",
+            "//g -> cost_map (cost, (start, target))",
+            "int kruskal(int v, vector<pair<int, pii>> &g){",
+            "\tunion_find uf(v);",
+            "\tSORT(g);",
+            "\tint ans = 0;",
+            "\tfor(int i = 0; i < g.size(); i++){",
+            "\t\tif(!uf.same(g[i].second.first, g[i].second.second)){",
+            "\t\t\tans += g[i].fi;",
+            "\t\t\tuf.connect(g[i].second.first, g[i].second.second);",
+            "\t\t}",
+            "\t}",
+            "\treturn ans;",
+            "}"
+        ],
+        "description": "クラスカル法による重み付き連結グラフの最小全域木を求める"
+    },
+    "divisor": {
+        "prefix": "divisor",
+        "body": [
+            "vector<ll> d;",
+            "for (ll i = 1; i*i <= N; i++) {",
+            "    if(N%i==0) {",
+            "        d.pb(i);",
+            "        if(i*i != N) d.pb(N/i); //Nが平方数である時の対策",
+            "    }",
+            "}"
+        ],
+        "description": "約数列挙．O(sqrt(n))"
+    },
+    "is_prime": {
+        "prefix": "is_prime",
+        "body": [
+            "bool is_prime(int n){",
+            "\tfor (int i = 2; i * i <= n; i++) {",
+            "\t\tif(n % i == 0) return false;",
+            "\t}",
+            "\treturn true;",
+            "}"
+        ],
+        "description": "素数判定．O(sqrt(n))"
+    },
+    "count_prime": {
+        "prefix": "count_prime",
+        "body": [
+            "int count_prime(int n){",
+            "\tint p = 0;",
+            "\tvector<int> prime(n+1, true);",
+            "\tprime[0] = prime[1] = false; ",
+            "\tfor(int i = 2; i <= n; i++)",
+            "\t\tif(prime[i]) {",
+            "\t\t\tp++;",
+            "\t\t\tfor (int j = i*2; j <= n; j += i) prime[j] = false;",
+            "\t\t}",
+            "\treturn p;",
+            "}"
+        ],
+        "description": "エラトステネスの篩によって素数の個数をカウント"
+    },
+    "prime_factor": {
+        "prefix": "prime_factor",
+        "body": [
+            "map<int, int> prime_factor(int n){",
+            "\tmap<int, int> res;",
+            "\tfor(int i = 2; i <= n; i++)",
+            "\t\twhile (n % i == 0){",
+            "\t\t\tres[i]++;",
+            "\t\t\tn /= i;",
+            "\t\t}",
+            "\treturn res;",
+            "}"
+        ],
+        "description": "素因数分解"
+    },
+    "comb": {
+        "prefix": "comb",
+        "body": [
+            "vector<ll> inv, fact, invfact;",
+            "void mod_build(int n = 101010){",
+                "\tfact.resize(n+1);",
+                "\tinv.resize(n+1);",
+                "\tinvfact.resize(n+1);",
+                "\tfact[0] = inv[0] = invfact[0] = 1;",
+                "\tinv[1] = 1;",
+                "\tREP(i, n){",
+                    "\t\tfact[i+1] = fact[i] * (i+1) % MOD;",
+                    "\t\tif(i > 0) inv[i+1] = MOD - inv[MOD % (i+1)] * (MOD / (i+1)) % MOD;",
+                    "\t\tinvfact[i+1] = invfact[i] * inv[i+1] % MOD;",
+                "\t}",
+            "}",
+            "ll perm(int n, int k){",
+                "\tif(n < 0 || k < 0 || k > n) return 0;",
+                "\treturn fact[n] * invfact[n-k] % MOD;",
+            "}",
+            "ll comb(int n, int k){",
+                "\tif(n<0 || k<0 || k>n) return 0;",
+                "\treturn (fact[n] * invfact[n-k] % MOD) * invfact[k] % MOD;",
+            "}"
+        ],
+        "description": "組み合わせ・順列"
+    },
+    "factorial":{
+        "prefix": "factorial",
+        "body": [
+            "int factorial(int n){",
+            "\tstatic map<int, int> fa; fa[0] = 1;",
+            "\tif(fa.count(n) == 0){",
+            "\t\tfa[n] = (int)((ll)n * factorial(n-1) % MOD); return fa[n];",
+            "\t}else return fa[n];",
+            "}"
+        ],
+        "description": "factorial(階乗)を求める．1e9+7で割った余りを返す．"
+    },
+    "lis": {
+        "prefix": "lis",
+        "body": [
+            "int lis(vector<int> &v){",
+            "\tint n = v.size();",
+            "\tvector<int> ans(n, INF);",
+            "\tREP(i, n) *lower_bound(ALL(ans), v[i]) = v[i];",
+            "\treturn lower_bound(ALL(ans), INF) - ans.begin();",
+            "}"
+        ],
+        "description": "最長増加部分列(Longest increasing subsequence)"
+    },
+    "BIT":{
+        "prefix": "BIT",
+        "body": [
+            "struct BIT{",
+            "\tvector<ll> bit; //1-indexed",
+            "\tint n;",
+            "\tBIT(int n) : n(n), bit(vector<ll>(n+1, 0)) {}",
+            "\tll sum(int i){",
+            "\t\tll s = 0;",
+            "\t\twhile(i > 0){",
+            "\t\t\ts += bit[i];",
+            "\t\t\ti -= i & -i;",
+            "\t\t}",
+            "\t\treturn s;",
+            "\t}",
+            "\tvoid add(int i, int x){",
+            "\t\twhile(i <= n){",
+            "\t\t\tbit[i] += (ll)x;",
+            "\t\t\ti += i & -i;",
+            "\t\t}",
+            "\t}",
+            "\t//xより大きい値(区間和)が現れる最初のインデックス. (l,u]の範囲",
+            "\tint lower_bound(ll x) {",
+            "\t\tll ret = 0;",
+            "\t\tll k = 1;",
+            "\t\twhile(2 * k <= n) k <<= 1;",
+            "\t\tfor(; k > 0; k >>= 1) {",
+            "\t\t\tif(ret + k < n && bit[ret + k] < x) {",
+            "\t\t\t\tx -= bit[ret + k];",
+            "\t\t\t\tret += k;",
+            "\t\t\t}",
+            "\t\t}",
+            "\t\treturn ret + 1;",
+            "\t}",
+            "\t//x以上の値(区間和)が現れる最初のインデックス. [l,u)の範囲",
+            "\tint upper_bound(ll x) {",
+            "\t\tll ret = 0;",
+            "\t\tll k = 1;",
+            "\t\twhile(2 * k <= n) k <<= 1;",
+            "\t\tfor(; k > 0; k >>= 1) {",
+            "\t\t\tif(ret + k < n && bit[ret + k] <= x) {",
+            "\t\t\t\tx -= bit[ret + k];",
+            "\t\t\t\tret += k;",
+            "\t\t\t}",
+            "\t\t}",
+            "\t\treturn ret + 1;",
+            "\t}",
+            "\tll between(int i, int j){",
+            "\t\tif(i > j) return 0;",
+            "\t\treturn sum(j) - sum(i-1);",
+            "\t}",
+            "};"
+        ],
+        "description": "Binary indexed tree"
+    },
+    "SegTree":{
+        "prefix": "ST",
+        "body": [
+            "template <typename T>",
+            "struct ST{",
+            "\tusing F = function<T(T,T)>;",
+            "\tF f;",
+            "\tvector<T> dat;",
+            "\tint n;",
+            "\tT ti;",
+            "\tST(F f, int n_, T init = INF) : f(f), ti(init) {",
+            "\t\tn = 1;",
+            "\t\twhile(n < n_) n <<= 1;",
+            "\t\tdat.assign(n << 1, init);",
+            "\t}",
+            "\tST(int n_, T init = INF){ //RMQ",
+            "\t\tST([](ll a, ll b){return (ll)min(a, b);}, n_, init);",
+            "\t}",
+            "\tvoid update(int k, int a){",
+            "\t\tk += n -1;",
+            "\t\tdat[k] = a;",
+            "\t\twhile(k > 0){",
+            "\t\t\tk = (k - 1) / 2;",
+            "\t\t\tdat[k] = f(dat[k * 2 + 1], dat[k * 2 + 2]);",
+            "\t\t}",
+            "\t}",
+            "\t// [a, b)",
+            "\tT query(int a, int b, int k, int l, int r){",
+            "\t\tif(r <= a || b <= l) return ti;",
+            "\t\tif(a <= l && r <= b) return dat[k];",
+            "\t\telse{",
+            "\t\t\tT vl = query(a,b,k * 2 + 1, l, (l + r) / 2);",
+            "\t\t\tT vr = query(a,b,k * 2 + 2, (l + r) / 2, r);",
+            "\t\t\treturn f(vl, vr);",
+            "\t\t}",
+            "\t}",
+            "};"
+        ],
+        "description": "Segment tree"
+    }
+}

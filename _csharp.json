@@ -1,0 +1,19 @@
+{
+	"cin1": {
+		"prefix": "cin1",
+		"body": ["${1:int} ${a} = ${1:int}.Parse(ReadLine());","${0:}"]
+	},
+	"cin2": {
+		"prefix": "cin2",
+		"body": ["var CinTemp = ReadLine().Split(' ');",
+                 "${1:int} ${2:a} = ${1:int}.Parse(CinTemp[0]);",
+                 "${1:int} ${3:b} = ${1:int}.Parse(CinTemp[1]);","${0:}"]
+	},
+	"cin3": {
+		"prefix": "cin3",
+		"body": ["var CinTemp = ReadLine().Split(' ');",
+				 "${1:int} ${2:a} = ${1:int}.Parse(CinTemp[0]);",
+				 "${1:int} ${3:b} = ${1:int}.Parse(CinTemp[1]);",
+                 "${1:int} ${4:c} = ${1:int}.Parse(CinTemp[2]);","${0:}"]
+	},
+}

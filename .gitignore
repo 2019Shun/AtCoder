@@ -2,3 +2,5 @@
 \.vscode/ipch/
 
 test/
+exe.out
+in.txt

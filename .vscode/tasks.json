@@ -8,18 +8,19 @@
                     "executable": "C:\\Windows\\System32\\wsl.exe",
                 }
             },
+
             "command": "g++",
             "args": [
                 "-std=gnu++1y",
-                "-g",
-                "-O2",
+                "-g3",
+                "-O0",
                 "-o",
                 "`wslpath",
-                // "'${fileDirname}/${fileBasenameNoExtension}.out'`",
-                "'${fileDirname}/exe.out'`",
+                "'${workspaceFolder}\\exe.out'`",
                 "`wslpath",
                 "'${file}'`",
             ],
+            
             "group": {
                 "kind": "build",
                 "isDefault": true

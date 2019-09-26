@@ -40,7 +40,17 @@
         "xtree": "cpp",
         "bitset": "cpp",
         "queue": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "numeric": "cpp",
+        "set": "cpp",
+        "string": "cpp",
+        "functional": "cpp",
+        "array": "cpp",
+        "forward_list": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "valarray": "cpp"
     },
-    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe"
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe",
+    "C_Cpp.errorSquiggles": "Disabled",
 }
